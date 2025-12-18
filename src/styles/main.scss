@@ -1,0 +1,16 @@
+@use 'abstracts/variables' as *;
+// @use 'abstracts/mixins' as *;
+// ... import other abstracts/utilities
+
+@use 'base/reset';
+@use './base/base';
+
+@use 'components/buttons';
+@use 'components/navigation';
+@use 'components/table';
+// @use 'components/card';
+// ... import other components
+
+#app {
+  margin: 40px;
+}

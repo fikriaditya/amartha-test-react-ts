@@ -1,0 +1,50 @@
+// DESIGN TOKENS
+// Colors Main
+$color-primary: #7f5fa3;
+$color-primary-light-1: #8a77d8;
+$color-primary-light-2: #8a54cf;
+$color-primary-light-3: #a989c7;
+$color-primary-light-4: #caaae3;
+$color-primary-dark-1: #650f79;
+$color-primary-dark-2: #420956;
+$color-primary-dark-3: #63297a;
+$color-primary-blue: #343872;
+$color-primary-white: #f6f6fe;
+$color-secondary: #6c757d;
+$color-success: #28a745;
+
+// Secondary colors
+$color-blue: #6b75ca;
+$color-yellow: #fbd22f;
+$color-orange: #e38619;
+$color-green: #27AE60;
+$color-red: #f72495;
+$color-cream: #fefbe7;
+
+// Neutral Shades
+// $color-black: #000000;
+$color-dark-1: #333333;
+$color-dark-2: #4a4a4a;
+$color-dark-3: #828282;
+$color-light-1: #bdbdbd;
+$color-light-2: #e0e0e0;
+$color-light-3: #f2f2f2;
+// $color-white: #ffffff;
+
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-s: 0.5rem;
+$spacing-m: 1rem;
+$spacing-l: 2rem;
+$spacing-xl: 4rem;
+
+// Typography
+$font-stack-default: nunito, roboto, sans-serif;
+$font-size-base: 1rem;
+
+$font-body-color: $color-dark-2;
+$font-heading-color: $color-primary-dark-2;
+$font-heading-color-2: $color-primary-blue;
+$font-accent-color: $color-primary;
+$font-secondary-color: $color-dark-3
