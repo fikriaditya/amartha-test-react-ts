@@ -7,12 +7,13 @@ import { useDebounce } from '../../hooks/useDebounce';
 interface Step2Props {
   data?: Partial<EmployeeDetailsEntity>;
   showBackButton: boolean;
+  employee_id: string;
   onChange: (data: Partial<EmployeeDetailsEntity>) => void;
   onBack: () => void;
   onSubmit: (data: EmployeeDetailsEntity) => void;
 }
 
-const Step2Details = ({ data, showBackButton, onChange, onBack, onSubmit }: Step2Props) => {
+const Step2Details = ({ data, showBackButton, employee_id, onChange, onBack, onSubmit }: Step2Props) => {
   const [form, setForm] = useState<Partial<EmployeeDetailsEntity>>(data || {});
   const [locationSearch, setLocationSearch] = useState(data?.location || '');
   const [suggestions, setSuggestions] = useState<any[]>([]);
@@ -41,6 +42,11 @@ const Step2Details = ({ data, showBackButton, onChange, onBack, onSubmit }: Step
       setForm({ ...form, photo_url: base64 });
     }
   };
+
+  if(showBackButton && employee_id && !form.employee_id) {
+    setForm({ ...form, employee_id: employee_id });
+    console.log('Set employee_id in form:', employee_id);
+  }
 
   return (
     <div className="x-form">

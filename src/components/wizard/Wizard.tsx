@@ -61,8 +61,8 @@ const Wizard = ({ role }: WizardProps) => {
   const handleFinalSubmit = async () => {
     const success = await submit(formData.basic!, formData.details!);
     if (success) {
+      navigate('/employees'); // Redirect to employee list
       localStorage.removeItem(getDraftKeyByRole(role));
-      navigate('/home'); // Redirect to merged list
     }
   };
 
@@ -106,6 +106,7 @@ const Wizard = ({ role }: WizardProps) => {
         {currentStep === 2 && (
           <Step2Details
             key={JSON.stringify(formData.details) === '{}' ? 'reset' : 'active'}
+            employee_id={formData.basic?.employee_id || ''}
             data={formData.details} 
             showBackButton={role === 'admin'}
             onChange={handleStep2Change} 
