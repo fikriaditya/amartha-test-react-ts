@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import type { EmployeeDetailsEntity, EmployeeListEntity } from '../../core/types/employee';
+import type { EmployeeListEntity } from '../../core/types/employee';
 
 interface EmployeeTableProps {
   data: EmployeeListEntity[];
