@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useDebounce } from './useDebounce';
 import { getDraftKeyByRole } from '../core/constant/storage';
-import type { Role } from '../core/types/employee';
+// import type { Role } from '../core/types/employee';
 
 // autosave formdata based on role and debounced input
-export const useAutosave = <T>(formData: T, role: Role) => {
+export const useAutosave = <T>(formData: T, role: 'ops' | 'admin') => {
   const debouncedFormData = useDebounce<T>(formData, 2000);
 
   useEffect(() => {

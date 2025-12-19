@@ -15,7 +15,7 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
   const [searchTerm, setSearchTerm] = useState(data?.department || '');
   const [suggestions, setSuggestions] = useState<OptionTypeEntity[]>([]);
   const [emailError, setEmailError] = useState('');
-  const [count, setCount] = useState(0); // For ID generation
+  // const [count, setCount] = useState(0); // For ID generation
 
   const idleFormData = useDebounce(form, 2000);
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { EmployeeService } from '../services/employee.service';
 import type { BasicInfoEntity, EmployeeDetailsEntity, EmployeeListEntity } from '../core/types/employee';
 import EmployeeTable from '../components/listing/EmployeeTable';
-import Pagination from '../components/listing/pagination';
+import Pagination from '../components/listing/Pagination';
 
 const EmployeeListPage = () => {
   // State
@@ -13,7 +13,7 @@ const EmployeeListPage = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(10);
 
-  // Data Fetching & Merging
+  // Data Fetching
   useEffect(() => {
     const fetchAndMergeData = async () => {
       setLoading(true);
