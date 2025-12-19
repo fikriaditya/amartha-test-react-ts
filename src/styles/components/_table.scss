@@ -7,7 +7,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   margin: 20px;
-  overflow: hidden; /* Clips children to border radius */
+  overflow: hidden;
 }
 
 .table-header {
@@ -55,20 +55,7 @@
   background-color: #fcfcfc;
   transition: background-color 0.2s ease;
 }
-
-/* Status Badges */
-.status-badge {
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.progress { background-color: #e3f2fd; color: #1976d2; }
-.completed { background-color: #e8f5e9; color: #2e7d32; }
-.delayed { background-color: #ffebee; color: #c62828; }
-
-/* Aligning budget numbers to the right */
+/* Alignments */
 .x-table th:last-child, 
 .x-table td:last-child {
   text-align: right;
@@ -173,4 +160,11 @@
 
 .btn-nav:hover:not(:disabled) {
   background-color: #f0f0f0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .table-container, .pagination-container {
+    margin: $spacing-s;
+  }
 }

@@ -214,3 +214,16 @@ select {
 button {
   cursor: pointer;
 }
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  html{
+    font-size: 12px;
+  }
+
+  main {
+    padding: $spacing-s;
+    min-height: calc(100vh - 70px);
+    background-color: $color-primary-white;
+  }
+}
