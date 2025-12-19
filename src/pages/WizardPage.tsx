@@ -7,7 +7,7 @@ const WizardPage = () => {
 
   return (
     <section className="page-container">
-      <header className="page-header">
+      <header className="page-header ta-c">
         <h1>Add New Employee</h1>
         <p>Current Role: <strong>{role.toUpperCase()}</strong></p>
       </header>

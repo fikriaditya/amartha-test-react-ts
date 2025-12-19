@@ -5,6 +5,8 @@
 @use 'base/reset';
 @use './base/base';
 
+@use 'utilities/utils';
+
 @use 'components/buttons';
 @use 'components/navigation';
 @use 'components/table';

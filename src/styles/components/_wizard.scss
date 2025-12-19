@@ -8,8 +8,9 @@
 
 .wizard__header {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: $spacing-l;
+  justify-content: space-between;
+  align-items: center;
+  // margin-bottom: $spacing-l;
 }
 
 .wizard__content {

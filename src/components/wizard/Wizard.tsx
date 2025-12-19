@@ -87,6 +87,7 @@ const Wizard = ({ role }: WizardProps) => {
   return (
     <div className="wizard">
       <div className="wizard__header">
+        <h2>{currentStep === 2 ? 'Employee Details' : 'Basic Information'}</h2>
         <button onClick={clearDraft} className="button button--secondary">Clear Draft</button>
       </div>
 
