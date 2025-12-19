@@ -7,11 +7,11 @@ let submitMock = vi.fn(async () => true);
 let isSubmittingFlag = false;
 
 // Mock hooks and utilities BEFORE importing the component
-vi.mock('../../hooks/useAutosave', () => ({
-  useAutosave: (data: any, role: any) => {
-    // no-op in tests
-  },
-}));
+// vi.mock('../../hooks/useAutosave', () => ({
+//   useAutosave: (data: any, role: any) => {
+//     // no-op in tests
+//   },
+// }));
 
 vi.mock('../../hooks/useSubmitWizard', () => ({
   useSubmitWizard: () => ({
