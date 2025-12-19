@@ -86,23 +86,33 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
     setForm({ ...form, email });
   };
 
+  const isFormInvalid = 
+    !form.full_name || 
+    !form.email || 
+    !!emailError || 
+    !form.department || 
+    !form.role || 
+    !form.employee_id;
+
   return (
     <form className="x-form" onSubmit={handleSubmit}>
       {/* Full Name and Email fields */}
       <div className="x-form__field">
-        <label className="x-form__label">Full Name</label>
+        <label className="x-form__label" htmlFor="full_name">Full Name</label>
         <input 
           className="x-form__input" 
+          id="full_name"
           value={form.full_name || ''} 
           onChange={e => setForm({...form, full_name: e.target.value})} 
           required 
         />
       </div>
       <div className="x-form__field">
-        <label className="x-form__label">Email</label>
+        <label className="x-form__label" htmlFor="email">Email</label>
         <input 
           type="email"
           className="x-form__input" 
+          id="email"
           value={form.email || ''} 
           onChange={e => validateEmail(e.target.value)}
           required 
@@ -111,10 +121,11 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
       </div>
       {/* Department and Role fields */}
       <div className="x-form__field form__group">
-        <label className="x-form__label">Department (Search)</label>
+        <label className="x-form__label " htmlFor="department">Department (Search)</label>
         <input 
           className="x-form__input" 
           value={searchTerm} 
+          id="department"
           onChange={e => setSearchTerm(e.target.value)}
           placeholder="Type to search..."
         />
@@ -127,16 +138,19 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
         )}
       </div>
       <div className="x-form__field form__group">
-        <label className="x-form__label">Designated Role</label>
+        <label className="x-form__label" htmlFor="role">Designated Role</label>
         <select 
           className="x-form__input x-form__select"
+          id="role"
           value={form.role || ''}
           onChange={(e) => setForm({ ...form, role: e.target.value as any })}
           required
         >
           <option value="" disabled>Select a role...</option>
           <option value="Admin">Admin</option>
-          <option value="Operations">Operations</option>
+          <option value="Engineer">Engineer</option>
+          <option value="Finance">Finance</option>
+          <option value="Ops">Ops</option>
         </select>
       </div>
       {/* Generated ID field */}
@@ -145,7 +159,13 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
         <input className="x-form__input x-form__input--readonly" value={form.employee_id || ''} readOnly />
       </div>
 
-      <button type="submit" className="button button--primary">Next: Details</button>
+      <button 
+        type="submit" 
+        className={`button button--primary ${isFormInvalid ? 'button--disabled' : ''}`}
+        disabled={isFormInvalid}
+      >
+          Next: Details
+      </button>
     </form>
   );
 };

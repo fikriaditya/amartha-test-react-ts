@@ -1,9 +1,70 @@
 {
   "departments": [
-    { "id": 1, "name": "Lending" },
-    { "id": 2, "name": "Funding" },
-    { "id": 3, "name": "Operations" },
-    { "id": 4, "name": "Engineering" }
+    {
+      "id": "1",
+      "name": "Lending"
+    },
+    {
+      "id": "2",
+      "name": "Funding"
+    },
+    {
+      "id": "3",
+      "name": "Operations"
+    },
+    {
+      "id": "4",
+      "name": "Engineering"
+    }
   ],
-  "basicInfo": []
+  "basicInfo": [
+    {
+      "id": "b0a4",
+      "department": "Engineering",
+      "employee_id": "ENG-001",
+      "full_name": "Aditya Fikri Ghozali",
+      "email": "adityafikrighozali@gmail.com",
+      "role": "Operations"
+    },
+    {
+      "id": "d4d6",
+      "full_name": "faisal zulfikar",
+      "email": "faisal.zulfikar@gmail.com",
+      "department": "Engineering",
+      "employee_id": "ENG-002",
+      "role": "Admin"
+    },
+    {
+      "id": "e55e",
+      "full_name": "Anisa Savitri",
+      "email": "anisa.savitri@gmail.com",
+      "role": "Admin",
+      "department": "Engineering",
+      "employee_id": "ENG-003"
+    },
+    {
+      "id": "db05",
+      "full_name": "Anisa Savitri",
+      "email": "anisa.savitri@gmail.com",
+      "role": "Admin",
+      "department": "Engineering",
+      "employee_id": "ENG-003"
+    },
+    {
+      "id": "48ec",
+      "full_name": "Aditya Fikri Ghozali",
+      "email": "adityafikrighozali@gmail.com",
+      "department": "Funding",
+      "employee_id": "FUN-001",
+      "role": "Admin"
+    },
+    {
+      "id": "49be",
+      "full_name": "coki pardede",
+      "email": "coki@gmail.com",
+      "department": "Lending",
+      "employee_id": "LEN-001",
+      "role": "Admin"
+    }
+  ]
 }

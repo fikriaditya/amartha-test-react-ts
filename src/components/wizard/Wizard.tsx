@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import type { WizardDraftEntity as WizardDraft } from '../../core/types/wizard';
 import { useAutosave } from '../../hooks/useAutosave';
 import { useSubmitWizard } from '../../hooks/useSubmitWizard';
@@ -15,6 +15,7 @@ interface WizardProps {
 
 const Wizard = ({ role }: WizardProps) => {
   const navigate = useNavigate();
+  const { search } = useLocation();
   
   // Initialize state from localStorage if a draft exists
   const [formData, setFormData] = useState<WizardDraft>(() => {
@@ -33,6 +34,26 @@ const Wizard = ({ role }: WizardProps) => {
 
   // Trigger background autosave
   useAutosave(formData, role);
+
+  // Listen for role changes
+  useEffect(() => {
+    const draftKey = getDraftKeyByRole(role);
+    const saved = localStorage.getItem(draftKey);
+    
+    if (saved) {
+      setFormData(JSON.parse(saved));
+    } else {
+      // Reset to empty state if no draft exists for this new role
+      setFormData({
+        basic: {} as BasicInfoEntity,
+        details: {} as EmployeeDetailsEntity,
+        lastUpdated: new Date().toISOString(),
+      });
+    }
+
+    // Reset step based on the new role
+    setCurrentStep(role === 'ops' ? 2 : 1);
+  }, [role]); 
 
   // update local storage on step data change
   const handleStep1Change = (data: Partial<BasicInfoEntity>) => {
@@ -61,7 +82,7 @@ const Wizard = ({ role }: WizardProps) => {
   const handleFinalSubmit = async () => {
     const success = await submit(formData.basic!, formData.details!);
     if (success) {
-      navigate('/employees'); // Redirect to employee list
+      navigate(`/employees${search}`); // Redirect to employee list
       localStorage.removeItem(getDraftKeyByRole(role));
     }
   };

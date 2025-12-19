@@ -12,8 +12,11 @@
 
 .table-header {
   padding: 20px;
+  display: flex;
   background-color: #f8f9fa;
   border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .table-header h2 {
@@ -56,10 +59,10 @@
   transition: background-color 0.2s ease;
 }
 /* Alignments */
-.x-table th:last-child, 
-.x-table td:last-child {
-  text-align: right;
-}
+// .x-table th:last-child, 
+// .x-table td:last-child {
+//   text-align: right;
+// }
 
 /* Sorting Indicators */
 .sortable {

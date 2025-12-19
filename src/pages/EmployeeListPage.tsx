@@ -3,8 +3,12 @@ import { EmployeeService } from '../services/employee.service';
 import type { BasicInfoEntity, EmployeeDetailsEntity, EmployeeListEntity } from '../core/types/employee';
 import EmployeeTable from '../components/listing/EmployeeTable';
 import Pagination from '../components/listing/Pagination';
+import { useSearchParams } from 'react-router-dom';
 
 const EmployeeListPage = () => {
+  const [searchParams] = useSearchParams();
+  const role = (searchParams.get('role') || 'admin') as 'admin' | 'ops';
+
   // State
   const [employees, setEmployees] = useState<EmployeeListEntity[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -66,7 +70,7 @@ const EmployeeListPage = () => {
 
   return (
     <div className="employee-list-page">
-      <EmployeeTable data={currentItems} />
+      <EmployeeTable data={currentItems} role={role} />
 
       <Pagination 
         currentPage={currentPage}

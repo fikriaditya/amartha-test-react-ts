@@ -48,19 +48,26 @@ const Step2Details = ({ data, showBackButton, employee_id, onChange, onBack, onS
     console.log('Set employee_id in form:', employee_id);
   }
 
+  const isFormInvalid = 
+    !form.photo_url || 
+    !form.employment_type || 
+    !form.location || 
+    !form.employee_id;
+
   return (
     <div className="x-form">
       {/* file upload */}
       <div className="x-form__field">
-        <label className="x-form__label">Employee Photo</label>
-        <input type="file" accept="image/*" onChange={handlePhotoChange} className="x-form__file-input" />
+        <label className="x-form__label" htmlFor="employee_photo">Employee Photo</label>
+        <input id="employee_photo" type="file" accept="image/*" onChange={handlePhotoChange} className="x-form__file-input x-form__input" />
         {form.photo_url && <img src={form.photo_url} alt="Preview" className="x-form__photo-preview" />}
       </div>
       {/* Employment Type and Location fields */}
       <div className="x-form__field">
-        <label className="x-form__label">Employment Type</label>
+        <label className="x-form__label" htmlFor="employment_type">Employment Type</label>
         <select 
           className="x-form__input x-form__select"
+          id="employment_type"
           value={form.employment_type || ''}
           onChange={(e) => setForm({ ...form, employment_type: e.target.value as any })}
           required
@@ -73,9 +80,10 @@ const Step2Details = ({ data, showBackButton, employee_id, onChange, onBack, onS
         </select>
       </div>
       <div className="x-form__field">
-        <label className="x-form__label">Work Location</label>
+        <label className="x-form__label" htmlFor="location">Work Location</label>
         <input 
-          className="x-form__input" 
+          className="x-form__input"
+          id="location"
           value={locationSearch} 
           onChange={(e) => setLocationSearch(e.target.value)}
           placeholder="Search locations..."
@@ -100,7 +108,7 @@ const Step2Details = ({ data, showBackButton, employee_id, onChange, onBack, onS
           className="x-form__input"
           value={form.notes || ''}
           onChange={(e) => setForm({ ...form, notes: e.target.value })}
-          name="message" 
+          name="user_message" 
           rows={4} 
           cols={50}
           placeholder="Enter any additional employment details or special instructions..."
@@ -113,8 +121,9 @@ const Step2Details = ({ data, showBackButton, employee_id, onChange, onBack, onS
         )}
         <button 
           type="button" 
-          onClick={() => onSubmit(form as EmployeeDetailsEntity)} 
-          className="button button--primary"
+          onClick={() => !isFormInvalid && onSubmit(form as EmployeeDetailsEntity)} 
+          className={`button button--primary ${isFormInvalid ? 'button--disabled' : ''}`}
+          disabled={isFormInvalid}
         >
           Submit Application
         </button>
