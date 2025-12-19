@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "api:step1": "json-server --watch db-1.json --port 4001",
+    "api:step2": "json-server --watch db-2.json --port 4002",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
