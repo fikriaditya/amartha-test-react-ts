@@ -1,0 +1,77 @@
+@use "../abstracts/variables" as *;
+
+.button-group {
+  display: flex;
+  gap: $spacing-m;
+  margin-bottom: $spacing-m;
+}
+
+.button {
+  display: inline-block;
+  padding: $spacing-s $spacing-m;
+  font-size: $font-size-base;
+  font-family: $font-stack-default;
+  background-color: $color-primary-light-3;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+
+  // Element: Icon within the button
+  &__icon {
+    margin-right: $spacing-s;
+    // ... other icon styles
+
+    &.plus-icon::before {
+      content: '+';
+      // color: white;
+      font-size: 20px;
+      line-height: 1rem;
+    }
+  }
+
+  &:hover {
+    background-color: $color-primary-light-2;
+  }
+
+  &:active {
+    background-color: $color-primary-light-1;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $color-primary-light-1;
+  }
+
+  // Modifier: A different color variant
+  &--secondary {
+    background-color: white !important;
+    border: 1px solid $color-primary-light-3;
+    color: $color-primary-light-3;
+
+    &:hover {
+      border-color: $color-primary-light-2;
+      color: $color-primary-light-2;
+    }
+
+    &:active {
+      border-color: $color-primary-light-1;
+      color: $color-primary-light-1;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary-light-1;
+      color: $color-primary-light-1;
+    }
+  }
+
+  // Modifier: A disabled state
+  &--disabled, &disabled, &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    // opacity: 0.6;
+    filter: grayscale(0.9) brightness(1.3);
+  }
+}

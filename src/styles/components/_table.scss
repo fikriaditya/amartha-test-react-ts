@@ -1,0 +1,170 @@
+@use "../abstracts/variables" as *;
+
+/* Container styling for the dashboard look */
+.table-container {
+  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 20px;
+  overflow: hidden;
+}
+
+.table-header {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.table-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.table-header p {
+  margin: 5px 0 0;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Core Table Styles */
+.x-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.x-table thead {
+  background-color: $color-primary-light-3;
+  color: #ffffff;
+  text-align: left;
+}
+
+.x-table th, 
+.x-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.x-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover effect */
+.x-table tbody tr:hover {
+  background-color: #fcfcfc;
+  transition: background-color 0.2s ease;
+}
+/* Alignments */
+.x-table th:last-child, 
+.x-table td:last-child {
+  text-align: right;
+}
+
+/* Sorting Indicators */
+.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable:hover {
+  background-color: $color-primary-light-2;
+}
+
+.sort-icon {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+// PAGINATION STYLES
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 20px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Page Size Selector */
+.page-size-selector select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 8px;
+  outline: none;
+  cursor: pointer;
+}
+/* Pagination Controls */
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* The Page Jump Input */
+.page-jump {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+#currentPageInput {
+  width: 45px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1a2a3a;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#currentPageInput:focus {
+  border-color: #1a2a3a;
+  box-shadow: 0 0 0 2px rgba(26, 42, 58, 0.1);
+}
+
+/* Remove default arrows (spinners) for Chrome/Safari/Edge */
+#currentPageInput::-webkit-outer-spin-button,
+#currentPageInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove arrows for Firefox */
+#currentPageInput[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Simple Navigation Buttons */
+.btn-nav {
+  padding: 6px 14px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.btn-nav:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .table-container, .pagination-container {
+    margin: $spacing-s;
+  }
+}

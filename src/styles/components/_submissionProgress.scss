@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as *;
+
+.submission-progress {
+  padding: $spacing-l;
+  text-align: center;
+  background: $color-light-1;
+  border-radius: 8px;
+}
+
+.submission-progress__bar-container {
+  width: 100%;
+  height: 12px;
+  background-color: $color-dark-3;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: $spacing-m 0;
+}
+
+.submission-progress__bar-fill {
+  height: 100%;
+  background-color: $color-primary-light-3;
+  transition: width 0.5s ease-out; /* Smooth movement */
+}
+
+.submission-progress__logs {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.submission-progress__log-item {
+  font-family: 'Courier New', Courier, monospace; /* Terminal style */
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.submission-progress__icon--loading {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

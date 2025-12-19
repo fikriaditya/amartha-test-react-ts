@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+
+.wizard {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-m;
+}
+
+.wizard__header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: $spacing-l;
+}
+
+.wizard__content {
+  background: white;
+  border: 1px solid $color-light-2;
+  border-radius: 8px;
+  padding: $spacing-l;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .wizard {
+    padding: $spacing-s;
+  }
+}
