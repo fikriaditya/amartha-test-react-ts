@@ -9,6 +9,9 @@ const MainLayout = () => (
       <NavLink to="/wizard?role=admin" className="nav__link">
         Add Employee (Admin)
       </NavLink>
+      <NavLink to="/wizard?role=ops" className="nav__link">
+        Add Employee (Ops)
+      </NavLink>
       <NavLink to="/style-guide" className="nav__link">
         Style Guide
       </NavLink>
