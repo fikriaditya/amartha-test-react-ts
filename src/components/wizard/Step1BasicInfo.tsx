@@ -86,6 +86,14 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
     setForm({ ...form, email });
   };
 
+  const isFormInvalid = 
+    !form.full_name || 
+    !form.email || 
+    !!emailError || 
+    !form.department || 
+    !form.role || 
+    !form.employee_id;
+
   return (
     <form className="x-form" onSubmit={handleSubmit}>
       {/* Full Name and Email fields */}
@@ -136,7 +144,9 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
         >
           <option value="" disabled>Select a role...</option>
           <option value="Admin">Admin</option>
-          <option value="Operations">Operations</option>
+          <option value="Engineer">Engineer</option>
+          <option value="Finance">Finance</option>
+          <option value="Ops">Ops</option>
         </select>
       </div>
       {/* Generated ID field */}
@@ -145,7 +155,12 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
         <input className="x-form__input x-form__input--readonly" value={form.employee_id || ''} readOnly />
       </div>
 
-      <button type="submit" className="button button--primary">Next: Details</button>
+      <button 
+        type="submit" 
+        className={`button button--primary ${isFormInvalid ? 'button--disabled' : ''}`}
+      >
+          Next: Details
+      </button>
     </form>
   );
 };

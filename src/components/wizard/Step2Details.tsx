@@ -48,6 +48,12 @@ const Step2Details = ({ data, showBackButton, employee_id, onChange, onBack, onS
     console.log('Set employee_id in form:', employee_id);
   }
 
+  const isFormInvalid = 
+    !form.photo_url || 
+    !form.employment_type || 
+    !form.location || 
+    !form.employee_id;
+
   return (
     <div className="x-form">
       {/* file upload */}
@@ -113,8 +119,8 @@ const Step2Details = ({ data, showBackButton, employee_id, onChange, onBack, onS
         )}
         <button 
           type="button" 
-          onClick={() => onSubmit(form as EmployeeDetailsEntity)} 
-          className="button button--primary"
+          onClick={() => !isFormInvalid && onSubmit(form as EmployeeDetailsEntity)} 
+          className={`button button--primary ${isFormInvalid ? 'button--disabled' : ''}`}
         >
           Submit Application
         </button>
