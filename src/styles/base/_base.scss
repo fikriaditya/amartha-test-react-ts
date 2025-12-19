@@ -84,7 +84,7 @@ main {
   }
 }
 
-.x-input-field {
+.x-form__field {
   margin-bottom: 1rem;
 }
 
@@ -158,7 +158,7 @@ select {
   border-radius: 0;
 }
 
-.input {
+.x-form__input {
   border: 1px solid $color-light-2;
   border-radius: 0.25rem;
   padding: $spacing-xs $spacing-s;
@@ -189,6 +189,26 @@ select {
     background-color: $color-light-3;
     cursor: not-allowed;
   }
+}
+
+.x-form__autocomplete-list {
+  position: absolute;
+  z-index: 10;
+  background: white;
+  border: 1px solid $color-light-2;
+  width: 300px;
+  max-width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.x-form__autocomplete-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.x-form__autocomplete-list li:hover {
+  background-color: $color-primary-light-3;
 }
 
 button {

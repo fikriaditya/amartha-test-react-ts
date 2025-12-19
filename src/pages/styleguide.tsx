@@ -168,27 +168,27 @@ function Styleguide() {
             Forms Input
           </div>
           <div className="section-content">
-            <div className="x-input-field">                   
-              <input type="text" className="input" placeholder="Text Input" required/>
+            <div className="x-form__field">                   
+              <input type="text" className="x-form__input" placeholder="Text Input" required/>
             </div>
-            <div className="x-input-field">   
-              <input type="text" className="input input--error" placeholder="Input with Error" required/>
+            <div className="x-form__field">   
+              <input type="text" className="x-form__input x-form__input--error" placeholder="Input with Error" required/>
             </div>
-            <div className="x-input-field">
-              <input type="text" className="input input--disabled" placeholder="Disabled Input" disabled />
+            <div className="x-form__field">
+              <input type="text" className="x-form__input x-form__input--disabled" placeholder="Disabled Input" disabled />
             </div>
-            <div className="x-input-field">
-              <input type="search" className="input" placeholder="Search Input"/>
+            <div className="x-form__field">
+              <input type="search" className="x-form__input" placeholder="Search Input"/>
             </div>
-            <div className="x-input-field">
-              <select className="input" required>
+            <div className="x-form__field">
+              <select className="x-form__input" required>
                 <option>Select Option</option>
                 <option>Option 1</option>
                 <option>Option 2</option>
               </select>
             </div>
-            <div className="x-input-field">
-              <textarea id="user_message" className="input" name="message" rows={4} cols={50}>
+            <div className="x-form__field">
+              <textarea id="user_message" className="x-form__input" name="message" rows={4} cols={50}>
                 Default text can go here.
               </textarea>
             </div>
