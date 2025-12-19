@@ -20,12 +20,17 @@ export interface EmployeeDetailsEntity {
   employment_type: 'Full-time' | 'Part-time' | 'Contract' | 'Intern';
   location: string;
   notes: string;
+  employee_id?: string; // reference to BasicInfoEntity
 }
 
 export interface EmployeeListEntity {
-    full_name: string;
-    department: string;
-    role: Role;
-    location: string;
-    photo_url: string;
+    full_name?: string;
+    email?: string;
+    department?: string;
+    role?: Role;
+    location?: string;
+    photo_url?: string;
+    notes?: string;
+    employment_type?: 'Full-time' | 'Part-time' | 'Contract' | 'Intern';
+    employee_id?: string;
 }

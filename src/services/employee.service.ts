@@ -20,6 +20,6 @@ export const EmployeeService = {
   getAllBasicInfo: (page: number, limit: number) => 
     apiStep1.get(`/basicInfo?_page=${page}&_limit=${limit}`),
 
-  getAllDetails: () => 
-    apiStep2.get('/details'),
+  getAllDetails: (page: number, limit: number) => 
+    apiStep2.get(`/details?_page=${page}&_limit=${limit}`),
 };
