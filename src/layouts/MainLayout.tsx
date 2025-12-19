@@ -4,7 +4,7 @@ import logoUrl from '../assets/images/logo-amartha.png';
 const MainLayout = () => (
   <div className="app-container">
     <nav className="nav">
-      <img src={logoUrl} alt="App Logo" className="nav__logo" />
+      <img src={logoUrl} alt="App Logo" className="nav__logo" width={120} />
       <div className="nav__links">
         <NavLink to="/employees" className={({ isActive }) => isActive ? 'nav__link--active' : 'nav__link'}>
           Employees

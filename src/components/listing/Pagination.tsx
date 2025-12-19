@@ -41,7 +41,7 @@ const Pagination = ({
       {/* Page Controls */}
       <div className="pagination-controls">
         <div className="page-jump">
-          <span>Page</span>
+          <label htmlFor="currentPageInput">Page</label>
           <input 
             type="number" 
             id="currentPageInput" 
@@ -49,6 +49,7 @@ const Pagination = ({
             onChange={handleInputChange}
             min="1" 
             max={totalPages}
+            aria-labelledby="Current Page Input"
           />
           <span>of {totalPages}</span>
         </div>

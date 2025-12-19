@@ -155,8 +155,8 @@ const Step1BasicInfo = ({ data, onChange, onNext }: Step1Props) => {
       </div>
       {/* Generated ID field */}
       <div className="x-form__field">
-        <label className="x-form__label">Generated ID</label>
-        <input className="x-form__input x-form__input--readonly" value={form.employee_id || ''} readOnly />
+        <label className="x-form__label" htmlFor="employee_id">Generated ID</label>
+        <input id="employee_id" className="x-form__input x-form__input--readonly" value={form.employee_id || ''} readOnly />
       </div>
 
       <button 
