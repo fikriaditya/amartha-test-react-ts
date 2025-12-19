@@ -200,8 +200,16 @@ function Styleguide() {
           </div>
           <div className="table-container">
             <div className="table-header">
-              <h2>Project Overview</h2>
-              <p>Real-time updates of current development sprints</p>
+              <div>
+                <h2>Project Overview</h2>
+                <p>Real-time updates of current development sprints</p>
+              </div>
+              <div className="table-actions">
+                <button className="button button--primary">
+                  <span className="button__icon plus-icon"></span>
+                  Add New Employee
+                </button>
+              </div>
             </div>
             <table className="x-table">
               <thead>

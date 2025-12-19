@@ -1,15 +1,35 @@
-import type { EmployeeListEntity } from '../../core/types/employee';
+import { useLocation, useNavigate } from 'react-router-dom';
+import type { EmployeeDetailsEntity, EmployeeListEntity } from '../../core/types/employee';
 
 interface EmployeeTableProps {
   data: EmployeeListEntity[];
+  role: 'ops' | 'admin';
 }
 
 const EmployeeTable = ({ data }: EmployeeTableProps) => {
+  const navigate = useNavigate();
+  const { search } = useLocation();
+  // navigate to wizard
+  const onAddEmployee = () => {
+    const baseUrl = '/wizard';
+    navigate(`${baseUrl}${search}`);
+  }
+
   return (
     <div className="table-container">
       <div className="table-header">
-        <h2>Employee Directory</h2>
-        <p>Real-time view of registered team members</p>
+        <div>
+          <h2>Employee Directory</h2>
+          <p>Real-time view of registered team members</p>
+        </div>
+        <div className="table-actions">
+          <button 
+            className="button button--primary" 
+            onClick={() => onAddEmployee()}>
+            <span className="button__icon plus-icon"></span>
+            Add New Employee
+          </button>
+        </div>
       </div>
       
       <table className="x-table">
