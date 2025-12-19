@@ -13,7 +13,7 @@
 .table-header {
   padding: 20px;
   display: flex;
-  background-color: #f8f9fa;
+  background-color: #fbfbfb;
   border-bottom: 1px solid #eee;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +26,7 @@
 
 .table-header p {
   margin: 5px 0 0;
-  color: #777;
+  color: $color-dark-2;
   font-size: 0.9rem;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .x-table thead {
-  background-color: $color-primary-light-3;
+  background-color: $color-primary;
   color: #ffffff;
   text-align: left;
 }

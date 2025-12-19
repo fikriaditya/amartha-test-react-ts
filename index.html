@@ -2,12 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>amartha-test-react-ts</title>
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Employee directory and onboarding wizard — internal demo app." />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Canonical URL (update if you deploy under a specific domain) -->
+    <!-- <link rel="canonical" href="/" /> -->
+
+    <!-- OpenGraph / Twitter -->
+    <meta property="og:title" content="Amartha — Employee Directory" />
+    <meta property="og:description" content="Employee directory and onboarding wizard — internal demo app." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/vite.svg" />
+    <!-- Preload the primary site image (helps LCP and social preview rendering) -->
+    <link rel="preload" href="/vite.svg" as="image" type="image/svg+xml">
+    <!-- <link rel="preload" href="/assets/vite.svg" as="image" type="image/svg+xml"> -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Amartha — Employee Directory" />
+    <meta name="twitter:description" content="Employee directory and onboarding wizard — internal demo app." />
+
+    <title>Amartha — Employee Directory</title>
+
+    <!-- Optional: load webfonts (preconnect + stylesheet). Remove or replace if you self-host fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Basic structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Amartha Demo",
+      "url": "/",
+      "logo": "/vite.svg"
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+
+    <noscript>
+      <div style="padding:1rem;background:#fff3cd;color:#664d03;text-align:center;">
+        JavaScript is disabled in your browser. To use this app please enable JavaScript.
+      </div>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

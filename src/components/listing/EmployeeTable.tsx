@@ -54,7 +54,7 @@ const EmployeeTable = ({ data }: EmployeeTableProps) => {
                   {emp.photo_url ? (
                     <img 
                       src={emp.photo_url} 
-                      alt={emp.full_name} 
+                      alt={emp.full_name || 'Employee Photo'} 
                       style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} 
                     />
                   ) : (
